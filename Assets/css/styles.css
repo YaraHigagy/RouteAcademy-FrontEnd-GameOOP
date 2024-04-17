@@ -1,0 +1,247 @@
+/* Font Awesome Library Icon stylesheet */
+@import url(all.min.css);
+/* Bootstrap stylesheet */
+@import url(bootstrap.min.css);
+/* Fonts */
+
+/* ========== General Styles ========== */
+:root {
+    /* Colors */
+    --white: 255, 255, 255;
+    --black: 0, 0, 0;
+
+    --muted-indigo: 57, 72, 121;
+    --gray: 50, 56, 62;
+    --azure: 13, 110, 253;
+
+    /* Colors' roles */
+    --color-main: rgba(var(--muted-indigo), var(--opacity));
+    --color-sub: rgba(var(--gray), var(--opacity));
+    --color-accent: rgba(var(--azure), var(--opacity));
+    --body-color: #272B30;
+    --border-color: rgba(0, 0, 0, 0.175);
+
+    /* Opacity */
+    --opacity: 1;
+    --opacity-50: 0.5;
+
+    /* Fonts */
+    --font-general: 'Pacifico', cursive;
+
+    /* Animation options */
+    --animation-duration: 0.5s;
+    --return-duration: 0.1s;
+}
+
+/* ========== Override Styles ========== */
+body {
+    --bs-body-bg: var(--body-color);
+    --bs-border-color: var(--border-color);
+
+    font-family: var(--font-general);
+    color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5, h6, p, small, a {
+    word-break: break-word;
+    text-wrap: wrap;
+}
+
+img {aspect-ratio: 2/1.13;}
+
+/* ========== Costumized Styles ========== */
+.bg-main {background-color: var(--color-main);}
+.bg-sub {background-color: var(--color-sub);}
+.bg-accent {background-color: var(--color-accent);}
+
+.text-accent {color: var(--color-accent);}
+
+.font-general {font-family: var(--font-general);}
+
+.fs-11px {font-size: calc(0.625rem + 0.5px);}
+.fs-12px {font-size: 0.75rem;}
+.fs-13px {font-size: calc(0.75rem + 0.25px)}
+.fs-14px {font-size: 0.875rem;}
+
+.w-fit {width: fit-content;}
+
+.w-40 {max-width: 40px;}
+.top-30 {top: 30px;}
+
+.px-12px {padding-left: 0.75rem; padding-right: 0.75rem;}
+.py-5px {padding-top: 0.3125rem; padding-bottom: 0.3125rem;}
+
+.pointer {cursor: pointer;}
+
+/* ========== Games Section ========== */
+header img {
+    max-height: 30vh;
+    object-fit: cover;
+}
+
+#home nav .container{
+    margin-top: -38px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.7);
+}
+#home .logo {width: 64px; height: 38px;}
+#home .navbar {
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: #fff;
+}
+#home .navbar .navbar-toggler:focus {box-shadow: none;}
+#home .navbar-nav {
+    --bs-navbar-color: #fff;
+    --bs-navbar-hover-color: var(--color-accent);
+    --bs-navbar-active-color: var(--color-accent);
+}
+
+#games-body .card {
+    --bs-card-border-color: var(--border-color);
+
+    filter:grayscale(0.7);
+    transition: var(--animation-duration) var(--return-duration);
+}
+#games-body .card:hover {
+    filter:grayscale(0);
+    transform: scale(1.05);
+}
+#games-body .card.text-bg-dark {
+    --bs-dark-rgb: transparent;
+}
+
+/* ========== Details Section ========== */
+
+/* ========== Loading Section ========== */
+#loading>div {
+    background-color: var(--body-color);
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+}
+
+/* From: https://cssloaders.github.io// */
+.loader {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+.loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* ========== Media Query ========== */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .me-md-20px {margin-right: 1.25rem;}
+    .order-md-1 {order: 1;}
+    .order-md-2 {order: 2;}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+
+}
+
+/* Large devices (Screens, 992px and up) */
+@media (min-width: 992px) {
+    .ms-lg-10px {margin-left: 0.625rem;}
+    .py-lg-5px {padding-top: 5px; padding-bottom: 5px;}
+}
+
+/* Extra Large devices (Screens, 1200px and up) */
+@media (min-width: 1200px) { 
+
+}
+
+
+
+/* ========== Color themes ========== */
+/* :where(html) {
+    --theme: 0;
+    container-name: root;
+    container-type: normal;
+}
+
+@media (prefers-color-scheme: teal) {
+    html { --theme: 0; }
+}
+
+@media (prefers-color-scheme: maroon) {
+    html { --theme: 1; }
+}
+
+@media (prefers-color-scheme: peach) {
+    html { --theme: 2; }
+}
+
+@media (prefers-color-scheme: purple) {
+    html { --theme: 3; }
+}
+
+html:has(#teal:checked) { --theme: 0; }
+html:has(#maroon:checked) { --theme: 1; }
+html:has(#peach:checked) { --theme: 2; }
+html:has(#purple:checked) { --theme: 3; }
+
+@container root style(--theme: 1) {
+    body {
+        --bg-main: rgba(var(--maroon), var(--opacity));
+        --text-main: rgba(var(--coffee), var(--opacity));
+        --text-fail: rgba(var(--amber), var(--opacity));
+    }
+    header .bg-main,
+    #welcome-sec .bg-main {--bg-main: rgba(var(--maroon), var(--opacity-75));}
+    header .dropdown-menu {--bs-dropdown-bg: rgba(var(--beige), var(--opacity-75));}
+}
+@container root style(--theme: 2) {
+    body {
+        --bg-main: rgba(var(--peach), var(--opacity));
+        --text-main: rgba(var(--dark-sage), var(--opacity));
+    }
+    header .navbar-brand, header #logout {
+        color: var(--text-main) !important;
+    }
+    header .bg-main,
+    #welcome-sec .bg-main {--bg-main: rgba(var(--peach), var(--opacity-75));}
+    header .dropdown-menu {--bs-dropdown-bg: rgba(var(--dark-sage), var(--opacity-75));}
+}
+@container root style(--theme: 3) {
+    body {
+        --bg-main: rgba(var(--dark-purple), var(--opacity));
+        --text-main: rgba(var(--light-orange), var(--opacity));
+        --text-fail: rgba(var(--amber), var(--opacity));
+    }
+    header .bg-main,
+    #welcome-sec .bg-main {--bg-main: rgba(var(--dark-purple), var(--opacity-75));}
+    header .dropdown-menu {--bs-dropdown-bg: rgba(var(--dark-orange), var(--opacity-75));}
+} */
